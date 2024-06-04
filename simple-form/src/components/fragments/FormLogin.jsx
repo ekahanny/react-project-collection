@@ -13,13 +13,8 @@ component input & label sesuai kebutuhan.
 const FormLogin = () => {
     return (
         <>
+        <h1 className="font-bold text-3xl text-slate-700 mb-5">LOGIN</h1>
             <form>
-                <InputForm
-                    name="fullname"
-                    label="Nama Lengkap"
-                    type="text"
-                    placeholder="Nama Lengkap"
-                />
                 <InputForm
                     name="email"
                     label="Email"
@@ -32,13 +27,7 @@ const FormLogin = () => {
                     type="password"
                     placeholder="*******"
                 />
-                <InputForm
-                    name="confirmPass"
-                    label="Confirm Password"
-                    type="password"
-                    placeholder="*******"
-                />
-                <Btn type="submit" color="bg-slate-700">Submit</Btn>
+                <Btn type="submit" color="bg-slate-700">Login</Btn>
             </form>
         </>
     );
