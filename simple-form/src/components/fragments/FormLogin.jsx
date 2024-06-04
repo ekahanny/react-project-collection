@@ -12,8 +12,12 @@ component input & label sesuai kebutuhan.
 
 const FormLogin = () => {
     return (
+        /*
+        FormLogin menerima props dari InputForm. Props yang
+        dikirim dari InputForm diisi nilainya pada component FormLogin
+        !!! component yg menerima props hanya mendeklarasikan valuenya
+        */ 
         <>
-        <h1 className="font-bold text-3xl text-slate-700 mb-5">LOGIN</h1>
             <form>
                 <InputForm
                     name="email"

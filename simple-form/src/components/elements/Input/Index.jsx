@@ -2,8 +2,9 @@ import Input from "./Input"
 import Label from "./Label"
 
 const InputForm = (props) => {
-    /* Saat komponen InputForm digunakan,
-     ia menerima props seperti name, label, type, dan placeholder.
+    /* component ini mengirimkan 4 props.
+    !!! props diinisialisasi hanya pada component
+    yang mengirimkan props yang bersangkutan
     */ 
     const {type, name, placeholder, label} = props
     return (

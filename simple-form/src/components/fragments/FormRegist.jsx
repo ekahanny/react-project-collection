@@ -4,7 +4,6 @@ import InputForm from "../elements/Input/Index"
 const FormRegist = () => {
     return (
         <>
-        <h1 className="font-bold text-3xl text-slate-700 mb-5">REGISTER</h1>
             <InputForm
                     name="fullname"
                     label="Nama Lengkap"
