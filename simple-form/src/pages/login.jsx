@@ -2,7 +2,6 @@ import FormLogin from "../components/fragments/FormLogin"
 
 const LoginPage = () => {
     return (
-
         <FormLogin/>
     )
 }

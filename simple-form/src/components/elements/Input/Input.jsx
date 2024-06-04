@@ -1,11 +1,13 @@
-const Input = () => {
+const Input = (props) => {
+    const {type, name, placeholder} = props;
     return (
         <input 
-        className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder:opacity-70 border-slate-400" 
-        type="text"
-        name="fullname"
-        placeholder="Nama Lengkap"/>
-    )
+            className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder:opacity-70 border-slate-400" 
+            name={name}
+            type={type}
+            placeholder={placeholder}
+        />
+    );
 }
 
-export default Input
+export default Input;
