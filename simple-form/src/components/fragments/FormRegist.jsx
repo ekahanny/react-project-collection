@@ -1,8 +1,12 @@
 import { useState } from "react"
 import Btn from "../elements/Button/Btn"
 import InputForm from "../elements/Input/Index"
+import { useNavigate } from "react-router-dom"
 
 const FormRegist = () => {
+        const navigate = useNavigate()
+
+        // untuk menyimpan data inputan user
         const [inputData, setInputData] = useState({
                 fullname: "",
                 email: "",
@@ -10,6 +14,7 @@ const FormRegist = () => {
                 confirmPassword: "",
         })
 
+        // untuk mengambil data inputan user
         const handleChange = (event) => {
                 const {name, value} = event.target
                 setInputData((prevData) => {
@@ -19,10 +24,14 @@ const FormRegist = () => {
                         }
                 })
         }
-
+        
         const handleSubmit = (event) => {
                 event.preventDefault();
-                console.log(inputData)
+
+                // navigate digunakan utk mengarahkan user ke laman lain
+                // state digunakan utk mengirimkan data saat melakukan navigasi
+                navigate("/data-diri", {state: inputData})
+                console.log("data : ",inputData)
         }
 
     return (

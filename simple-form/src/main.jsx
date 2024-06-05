@@ -5,6 +5,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from './pages/login.jsx';
 import RegisterPage from './pages/register.jsx';
+import FormResult from './components/fragments/FormResult.jsx';
 
 // menambahkan router
 const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     path: "/register",
     element: <RegisterPage/>,
   },
+  {
+    path: "/data-diri",
+    element: <FormResult/>
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
