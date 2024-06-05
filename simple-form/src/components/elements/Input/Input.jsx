@@ -1,5 +1,5 @@
 const Input = (props) => {
-    const {type, name, placeholder} = props;
+    const {type, name, placeholder, onChange} = props;
     return (
             /*
             Props pada komponen Label di file Label.jsx
@@ -10,6 +10,7 @@ const Input = (props) => {
             name={name}
             type={type}
             placeholder={placeholder}
+            onChange={onChange}
         />
     );
 }

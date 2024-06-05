@@ -6,12 +6,12 @@ const InputForm = (props) => {
     !!! props diinisialisasi hanya pada component
     yang mengirimkan props yang bersangkutan
     */ 
-    const {type, name, placeholder, label} = props
+    const {type, name, placeholder, label, onChange} = props
     return (
         <>
         {/* Meneruskan value dari props ke component label & input */}
             <Label htmlFor={name} label={label} />
-            <Input name={name} type={type} placeholder={placeholder} />    
+            <Input name={name} type={type} placeholder={placeholder} onChange={onChange}/>    
         </>
     )
 }
