@@ -1,5 +1,6 @@
 import { useState } from "react"
 import ContactInput from "../components/ContactInput"
+import ContactOutput from "../components/ContactOutput"
 
 const ContactPages = () => {
     const [contact, setContact] = useState({
@@ -25,7 +26,7 @@ const ContactPages = () => {
 
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen">
+        <div className="flex flex-col justify-center items-center min-h-screen m-4">
             <div className="w-full max-w-xl bg-slate-100 p-10 rounded-md border">
                 <h1 className="text-3xl font-semibold text-slate-700 text-center mb-10 mt-3">ADD CONTACT</h1>
                 <form onSubmit={handleSubmit}>
@@ -55,6 +56,8 @@ const ContactPages = () => {
                     </div>
                 </form>
             </div>
+
+            <ContactOutput/>
         </div>
     )
 }
