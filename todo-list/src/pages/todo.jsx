@@ -43,6 +43,27 @@ const ToDoPage = () => {
         console.log("state todo: ", todo)
     }
 
+    const handleDeleteToDo = (index) => {
+        const confirmDelete = window.confirm("Are you sure to delete this task?")
+        if(!confirmDelete) return;
+
+        setTodo((prevToDo) => {
+            /*
+                digunakan untuk membuat array baru updatedTasks
+                yang berisi semua elemen dari prevToDo.tasks
+                yang tidak memiliki index yang sama dengan index
+                yang akan dihapus. (mengecualikan index dari tasks
+                yang akan dihapus)
+            */
+            const updatedTasks = prevToDo.tasks.filter((task, i) => i !== index);
+            return {
+                ...prevToDo,
+                tasks: updatedTasks,
+            };
+        });
+        console.log("index yang akan dihapus: ", index)
+    };
+
     return (
         <>
             <div className="flex flex-col justify-center items-center min-h-screen">
@@ -61,7 +82,7 @@ const ToDoPage = () => {
                         <button className="h-10 px-3 font-semibold text-xl rounded-md bg-rose-400 text-black mt-7 ml-3" type="submit">+</button>
                     </form>
                     {todo.tasks.length > 0 && todo.tasks.map((task, index) => (
-                        <ToDoList key={index}>{task}</ToDoList>
+                        <ToDoList key={index} index={index} onDelete={handleDeleteToDo}>{task}</ToDoList>
                     ))}
                 </div>
             </div>
