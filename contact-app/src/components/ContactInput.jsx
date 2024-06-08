@@ -1,5 +1,5 @@
 const ContactInput = (props) => {
-    const {name, type, placeholder, label, onChange} = props
+    const {name, type, placeholder, label, value, onChange} = props
     return (
         <div className="flex flex-col ml-3">
             <label htmlFor={name} className="block text-slate-700 text-sm font-semibold mb-2">{label}</label>
@@ -8,6 +8,7 @@ const ContactInput = (props) => {
                 name={name}
                 type={type}
                 placeholder={placeholder}
+                value={value}
                 onChange={onChange}
             />
             
