@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ContactInput from "../components/ContactInput"
 import ContactOutput from "../components/ContactOutput"
 
@@ -11,6 +11,11 @@ const ContactPages = () => {
             contactEmail: "",
         }
     })
+
+    // untuk memastikan inputan user lgsg tersimpan pada array data dalam state
+    useEffect(() => {
+        console.log("contact :", contact);
+    }, [contact]);
 
     const handleChange = (event) => {
         const {name, value} = event.target
