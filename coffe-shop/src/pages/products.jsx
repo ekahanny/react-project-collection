@@ -1,7 +1,23 @@
+import { useEffect, useState } from "react";
 import Btn from "../components/elements/Btn";
 import CardProduct from "../components/fragments/CardProduct";
+import getDataFromApi from "../services/coffe.service";
 
 const ProductPages = () => {
+    const [coffe, setCoffe] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await getDataFromApi()
+                setCoffe(data)
+            } catch (error) {
+                console.log("Error fetching data :", error)
+            }
+        }
+        fetchData()
+    }, [])
+
     return (
         <div className="mx-16 my-20 bg-[#1B1D1F] rounded-lg py-8 px-10 -mt-20">
             <div className="text-center my-8">
@@ -17,50 +33,17 @@ const ProductPages = () => {
                 <Btn>All Products</Btn>
                 <Btn>Available Now</Btn>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <CardProduct
-                    image="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/cappuccino.jpg"
-                    name="Cappucino"
-                    price="5.20"
-                    rating="4.7"
-                    votes="65"
-                />
-                <CardProduct
-                    image="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/house-coffee.jpg"
-                    name="House Coffee"
-                    price="3.50"
-                    rating="4.85"
-                    votes="14"
-                />
-                <CardProduct
-                    image="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/espresso.jpg"
-                    name="Espresso"
-                    price="2.50"
-                    rating="4.9"
-                    votes="55"
-                />
-                <CardProduct
-                    image="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/coffee-latte.jpg"
-                    name="Coffee Latte"
-                    price="4.50"
-                    rating="5.0"
-                    votes="23"
-                />
-                <CardProduct
-                    image="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/chocolate-coffee.jpg"
-                    name="Chocolate Coffee"
-                    price="4.00"
-                    rating="4.65"
-                    votes="122"
-                />
-                <CardProduct
-                    image="https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/valentine-special.jpg"
-                    name="Valentine Special"
-                    price="6.50"
-                    rating="No ratings"
-                    votes="0"
-                />
+                {coffe.map((item, index) => (
+                    <CardProduct
+                        key={index}
+                        image={item.image}
+                        name={item.name}
+                        price={item.price}
+                        rating={item.rating}
+                        votes={item.votes}
+                    />
+                ))}
             </div>
         </div>
     );
