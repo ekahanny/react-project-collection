@@ -5,6 +5,7 @@ import getDataFromApi from "../services/coffe.service";
 
 const ProductPages = () => {
     const [coffe, setCoffe] = useState([]);
+    const [filter, setFilter] = useState("");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,6 +18,14 @@ const ProductPages = () => {
         };
         fetchData();
     }, []);
+
+    const filteredCoffe = coffe.filter((item) => {
+        if (filter === "available") {
+            return item.available
+        }else{
+            return true
+        }
+    })
 
     return (
         <div className="mx-16 my-20 bg-[#1B1D1F] rounded-lg py-8 px-10 -mt-20 relative">
@@ -33,11 +42,11 @@ const ProductPages = () => {
             </div>
 
             <div className="flex justify-center space-x-2 mb-8">
-                <Btn>All Products</Btn>
-                <Btn>Available Now</Btn>
+                <Btn onClick={() => setFilter("")} isActive={filter === ""}>All Products</Btn>
+                <Btn onClick={() => setFilter("available")} isActive={filter === "available"}>Available Now</Btn>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {coffe.map((item, index) => (
+                {filteredCoffe.map((item, index) => (
                     <CardProduct
                         key={index}
                         image={item.image}

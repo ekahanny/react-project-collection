@@ -1,6 +1,11 @@
-const Btn = ({children}) => {
+const Btn = ({isActive, children, onClick}) => {
     return (
-        <button className="bg-[#6F757C] text-white text-sm py-2 px-3 mx-2 rounded-lg">{children}</button>
+        <button 
+        className={`px-4 py-2 rounded-lg focus:outline-none text-white ${isActive ? 'bg-[#6F757C]' : 'bg-none'}`}
+        onClick={onClick}
+        > 
+            {children}
+        </button>
     )
 }
 
