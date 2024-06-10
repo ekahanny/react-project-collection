@@ -1,6 +1,7 @@
 const CardProduct = ({ image, name, price, rating, votes }) => {
   return (
     <div className="w-full p-4 mt-2">
+      <p className="absolute m-2 bg-[#F6C768] w-fit px-3 py-1 text-sm font-semibold rounded-full">Popular</p>
       <img 
         src={image}
         alt={name}
