@@ -28,10 +28,10 @@ const CardProduct = ({ image, name, price, rating, votes, isPopular, isAvailable
         </svg>)}
         
         {/* ratings */}
-        <p className="text-white ml-1">{rating}</p>
+        <p className="text-white ml-1 font-semibold">{rating}</p>
         
         {/* sum of votes */}
-        <p className="text-[#6F757C] ml-1">
+        <p className="text-[#6F757C] ml-1 font-semibold">
           {votes > 0 ? (`(${votes} votes)`) : "No Ratings" }
         </p>
 
