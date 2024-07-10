@@ -2,7 +2,7 @@ function Filter() {
     const filters = ['All Stays', 'Norway', 'Finland', 'Sweden', 'Switzerland'];
   
     return (
-      <div className="flex flex-row bg-green-600 p-6 w-full max-w-7xl rounded-lg border-white backdrop-blur-sm bg-opacity-80">
+      <div className="flex flex-row p-8 w-full -mt-8 max-w-7xl border rounded-lg border-gray-600 backdrop-blur-sm" style={{ backgroundColor: 'rgba(32, 41, 58, .85)'}}>
         {filters.map((filter, index) => (
           <a className="mx-3 text-white font-semibold mt-2 cursor-pointer" key={index}>{filter}</a>
         ))}
