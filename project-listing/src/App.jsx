@@ -21,10 +21,9 @@ function App() {
         </div>
         <Filter />
       </div>
+      
 
       {/* Card Component */}
-      <Card />
-      <Card />
       <Card />
 
 
