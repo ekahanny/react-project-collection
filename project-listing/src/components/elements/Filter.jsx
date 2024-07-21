@@ -3,7 +3,7 @@ function Filter() {
 
   return (
     <div className="relative z-10 flex flex-col items-center w-full h-1/6 pt-16">
-      <div className="flex flex-row p-8 w-full -mt-8 max-w-7xl border rounded-lg border-gray-600 backdrop-blur-sm" style={{ backgroundColor: 'rgba(32, 41, 58, .85)'}}>
+      <div className="flex flex-row p-8 w-full -mt-8 mr-16 max-w-7xl border rounded-lg border-gray-600 backdrop-blur-sm" style={{ backgroundColor: 'rgba(32, 41, 58, .85)'}}>
         {filters.map((filter, index) => (
           <a className="mx-3 text-white font-semibold mt-2 cursor-pointer" key={index}>{filter}</a>
         ))}
