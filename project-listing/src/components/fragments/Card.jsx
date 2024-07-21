@@ -1,7 +1,7 @@
 function Card({image, title, desc, price, rating, guests, bedrooms}) {
     return (
-      <div className="bg-dark-gray text-white p-3">
-        <div className="ml-6 mt-4 border border-white w-[357px] rounded-lg">
+      <div className="bg-dark-gray text-white p-3 m-6">
+        <div className="ml-6 border border-white w-[357px] rounded-lg">
             <img className="rounded-lg" src={image} alt={title} />
             <div className="p-5">
               <h1 className="font-bold">{title}</h1>

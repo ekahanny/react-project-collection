@@ -40,11 +40,11 @@ const PropertyPages = () => {
         <Filter />
       </div>
       
-      <h1 className="text-2xl text-white font-semibold pl-32 mt-20">Over 200 stays.</h1>
+      <h1 className="text-2xl text-white font-semibold pl-36 mt-20">Over 200 stays</h1>
       
 
       {/* Card Component */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-20 bg-dark-gray">
         {properties.map((property, index) => (
           <Card
             key={index}
