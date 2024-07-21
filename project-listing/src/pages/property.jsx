@@ -55,6 +55,7 @@ const PropertyPages = () => {
             rating={property.rating}
             guests={property.capacity.people}
             bedrooms={property.capacity.bedroom}
+            isSuperhost={property.superhost}
           />
         ))}
       </div>
